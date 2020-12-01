@@ -33,9 +33,7 @@ class Day1 {
     fun doMagicWith2(expected: Int, entries: IntArray): Int {
         //sort out the damn entries, we don't need any above the sum target value
         val culled = entries.filter { i -> i < expected }.sorted()
-        //val inverse = culled.asReversed()
         culled.forEach { one ->
-            //no need to carry on if matching pair is found
             culled.forEach lit2@{ two ->
                 val sum = one + two
                 //if matching pair is found or tested pair sum is above target value, we can stop iterating
