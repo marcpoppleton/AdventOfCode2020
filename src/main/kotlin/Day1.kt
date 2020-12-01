@@ -1,4 +1,5 @@
 import java.io.File
+import kotlin.math.exp
 
 class Day1 {
 
@@ -11,8 +12,14 @@ class Day1 {
         }
         try {
             val entries = getEntries(args[1])
-            println("Magic with 2 is : ${doMagicWith2(2020, entries)}")
-            println("Magic with 3 is : ${doMagicWith3(2020, entries)}")
+            val start = System.currentTimeMillis()
+            val part1 = doMagicWith2(2020, entries)
+            val end = System.currentTimeMillis()
+            val start2 = System.currentTimeMillis()
+            val part2 = doMagicWith3(2020, entries)
+            val end2 = System.currentTimeMillis()
+            println("Magic with 2 is : $part1 in ${end - start} millis")
+            println("Magic with 3 is : $part2 in ${end2 - start2} millis")
         }catch(e:java.io.FileNotFoundException){
             println("${args[1]} is not a valid file.")
         }
@@ -21,18 +28,20 @@ class Day1 {
     /*
     We need to find in an array a pair of int whose sum equals a given value.
     The function starts by dropping all values above the target value and sorts them.
-    It then iterates the values starting from both ends. We a matching couple is found it stops and returns the product of both.
+    It then iterates the values twice. When a matching couple is found it stops and returns the product of both.
      */
-    fun doMagicWith2(sum: Int, entries: IntArray): Int {
+    fun doMagicWith2(expected: Int, entries: IntArray): Int {
         //sort out the damn entries, we don't need any above the sum target value
-        val culled = entries.filter { i -> i < sum }.sorted()
-        culled.asReversed().forEach { big ->
+        val culled = entries.filter { i -> i < expected }.sorted()
+        //val inverse = culled.asReversed()
+        culled.forEach { one ->
             //no need to carry on if matching pair is found
-            culled.forEach lit2@{ small ->
+            culled.forEach lit2@{ two ->
+                val sum = one + two
                 //if matching pair is found or tested pair sum is above target value, we can stop iterating
-                if (big + small > sum) return@lit2
-                if (big + small == sum) {
-                    return big * small
+                if (expected > sum) return@lit2
+                if (expected == sum) {
+                    return one * two
                 }
             }
         }
@@ -42,14 +51,15 @@ class Day1 {
     /*
     Does exactly the same stuff as the other function, but with 3 entries, so 3 iterators.
      */
-    fun doMagicWith3(sum: Int, entries: IntArray): Int {
-        val culled = entries.filter { i -> i < sum }.sorted()
-        culled.asReversed().forEach { big ->
-            culled.asReversed().forEach { middle ->
-                culled.forEach lit3@{ small ->
-                    if (big + middle + small > sum) return@lit3
-                    if (big + middle + small == sum) {
-                        return big * middle * small
+    fun doMagicWith3(expected: Int, entries: IntArray): Int {
+        val culled = entries.filter { i -> i < expected }.sorted()
+        culled.forEach { one ->
+            culled.forEach { two ->
+                culled.forEach lit3@{ three ->
+                    val sum = one + two + three
+                    if (sum > expected) return@lit3
+                    if (sum == expected) {
+                        return one * two * three
                     }
                 }
             }
