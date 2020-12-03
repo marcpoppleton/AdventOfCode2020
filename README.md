@@ -27,3 +27,18 @@ For each element in the list we then filter the characters in the password match
 
 In part 2 we are given the same data set except this time we are told that the two numbers are in fact indexes in the password at which we must find the given character. Only one of the indexes must contain the character.
 Using an XOR operation we can check if each password meets the requirement or not. If so, we increment the result.  
+
+## Day 3
+
+### Part 1
+
+We are given a list of String containing a fixed set of characters, . or #.
+We need to find the number of occurrences of # in a string array, given a specific line and index jump.
+Each line contains a fixed number of characters. We have two parameters, right and down. 
+Right give the value to increment the index, down the number of lines to jump.
+If the incremented index is above the biggest index of the line, we shift the index from the start by the difference
+In part one we test every line, shifting the index by 3.
+    
+### Part 2
+
+In part 2 we are given the same data set. We are given a 5 combinations of right and down values. We have to return the product of the number of # found in each combination.
