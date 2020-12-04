@@ -30,14 +30,14 @@ class Day3Test {
     @Test
     fun testMagic() {
         val fileEntries = Day3().getEntries("/Users/marcpoppleton/Code/AdventOfCode2020/src/test/resources/Day3.txt")
-        val result = Day3().doMagic(fileEntries)
+        val result = Day3().part1(fileEntries)
         assertEquals(expectedResult,result)
     }
 
     @Test
     fun testMagic2() {
         val fileEntries = Day3().getEntries("/Users/marcpoppleton/Code/AdventOfCode2020/src/test/resources/Day3.txt")
-        val result = Day3().doMagic2(fileEntries)
+        val result = Day3().part2(fileEntries)
         assertEquals(expectedResult2,result)
     }
 

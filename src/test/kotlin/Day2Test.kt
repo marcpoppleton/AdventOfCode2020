@@ -10,8 +10,8 @@ class Day2Test {
             "2-9 c: ccccccccc"
     )
 
-    val expectedResult = 2
-    val expectedResult2 = 1
+    val expectedResult = 2L
+    val expectedResult2 = 1L
 
     @Test
     fun testFileReading() {
@@ -22,14 +22,14 @@ class Day2Test {
     @Test
     fun testMagic() {
         val fileEntries = Day2().getEntries("/Users/marcpoppleton/Code/AdventOfCode2020/src/test/resources/Day2.txt")
-        val result = Day2().doMagic(fileEntries)
+        val result = Day2().part1(fileEntries)
         assertEquals(expectedResult,result)
     }
 
     @Test
     fun testMagic2() {
         val fileEntries = Day2().getEntries("/Users/marcpoppleton/Code/AdventOfCode2020/src/test/resources/Day2.txt")
-        val result = Day2().doMagic2(fileEntries)
+        val result = Day2().part2(fileEntries)
         assertEquals(expectedResult2,result)
     }
 

@@ -42,3 +42,15 @@ In part one we test every line, shifting the index by 3.
 ### Part 2
 
 In part 2 we are given the same data set. We are given a 5 combinations of right and down values. We have to return the product of the number of # found in each combination.
+
+## Day 4
+
+### Part 1
+
+The data set contains potential passport looking data, written on one or more line per potential passport.
+We need to find the number of moreless passport looking scan results. A given set of required keys is provided. A scan is considered valid if it contains all of the required keys.
+The first step consists of collecting all data regarding one potential passport on a single line. I then break the string into tokens, first separating the pairs key:values, then extracting the keys and putting them in a collection. If the collection contains all the required keys, the dataset is considered as valid.
+    
+### Part 2
+
+In part 2 we are given the same data set. This time not only must we check if the datasets contains all the required keys, but we must also check that the values follow a given set of rules.
