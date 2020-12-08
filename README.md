@@ -99,3 +99,20 @@ We iterate on the visiting set until it's empty.
 ### Part 2
 
 Based on the same structure as part 1 we recursively count the siblings of each bag.
+
+
+## Day 8
+
+### Part 1
+
+The input contains instructions for a program to run. It has three instructions, NOP, ACC and JMP followed by a numeric value.
+We are told that the program can fall in an infinite loop and never terminate. So we must implement a security mechanism to stop the program from looping.
+In part 1 we are asked to stop the program as soon as it is about to enter an infinite loop and return the value of the accumulator.
+
+### Part 2
+
+In part 2 we are told that the infinite loop is maybe due to an instruction error. Either a NOP switched to a JMP or the opposite.
+To debug the program we have to change one, and only one, JMP to NOP or NOP to JMP and the program will execute properly.
+To do, so we change one by one all the JMP instructions to NOP and run the code each time. If the program still fails to terminate properly
+we proceed to change one by one all the NOP to JMP and run the code each time.
+As soon as a change gets the program to terminate gracefully we return the value of the accumulator.
