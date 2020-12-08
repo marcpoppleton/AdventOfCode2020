@@ -19,8 +19,8 @@ interface Day {
         }
     }
 
-    fun part1(entries:List<String>):Long
-    fun part2(entries:List<String>):Long
+    fun part1(entries:List<String>):Long?
+    fun part2(entries:List<String>):Long?
 
     fun getEntries(filename: String): List<String> = File(filename).readLines()
 

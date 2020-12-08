@@ -54,3 +54,18 @@ The first step consists of collecting all data regarding one potential passport 
 ### Part 2
 
 In part 2 we are given the same data set. This time not only must we check if the datasets contains all the required keys, but we must also check that the values follow a given set of rules.
+
+## Day 5
+
+### Part 1
+
+We are given a list of 10 chars String representing seat numbers encoded in a combination of F,B,L and R. The first 7 chars encode the row, the last 3 encode the column.
+We start by splitting the string in two bits, on encoding the row, the other the column. Then by walking down the BSP tree following the chars in each substring we can get in row and the column.
+The plane is composed of 8 columns, so row * 8 + column will give us the seat number.
+We proceed to decode each boarding pass and then return the highest value found. 
+    
+### Part 2
+
+We have all the boarding passes, therefore all the occupied seats. In order to find our seat, we need to find the missing value in the suite of seat numbers. Luckily we are told that our seat is not at the very beginning or at the very end, so we know that our missing value is somewhere in the suite.
+We can calculate the expected sum of the values of this arithmetic suite.
+The difference between the expected sum and the actual sum is our seat id.
