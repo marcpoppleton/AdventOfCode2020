@@ -69,3 +69,17 @@ We proceed to decode each boarding pass and then return the highest value found.
 We have all the boarding passes, therefore all the occupied seats. In order to find our seat, we need to find the missing value in the suite of seat numbers. Luckily we are told that our seat is not at the very beginning or at the very end, so we know that our missing value is somewhere in the suite.
 We can calculate the expected sum of the values of this arithmetic suite.
 The difference between the expected sum and the actual sum is our seat id.
+
+## Day 6
+
+### Part 1
+
+The input contains groups of lines corresponding to the positives answers to a set of questions.
+We have to return the number of questions having at least one positive answer for each group
+Knowing that an empty line means a new group, we start by concatenating the lines to build a line per group.
+Then we collect the unique letters of the string and count them.
+    
+### Part 2
+
+This time we have to count number of items found in ALL lines of a group.
+To do so we get the unique positive responses for each person and, by intersecting the sets, form the response for a given group.
