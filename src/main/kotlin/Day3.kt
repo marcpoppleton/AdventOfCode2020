@@ -4,16 +4,6 @@ class Day3:Day {
 
     val tree:Char = "#".toCharArray()[0]
 
-    override fun main(args: Array<String>) {
-        if (args.size != 2) {
-            println("Usage is java -jar advent.jar 3 absolute_path_to_input_file")
-            println("For example:")
-            println("java -jar advent.jar 3 /tmp/day3.txt")
-            return
-        }
-        super.main(args)
-    }
-
     override fun part1(entries: List<String>): Long = countTreesDownSlope(entries,3,1)
 
     override fun part2(entries: List<String>): Long {

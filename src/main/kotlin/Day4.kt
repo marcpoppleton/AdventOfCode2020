@@ -4,16 +4,6 @@ class Day4:Day {
     val requiredKeys = listOf("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid")
     val validEyeColors = listOf("amb", "blu", "brn", "gry", "grn", "hzl", "oth")
 
-    override fun main(args: Array<String>) {
-        if (args.size != 2) {
-            println("Usage is java -jar advent.jar 4 absolute_path_to_input_file")
-            println("For example:")
-            println("java -jar advent.jar 4 /tmp/day4.txt")
-            return
-        }
-        super.main(args)
-    }
-
     /*
     The data set contains potential passport looking data, written on one or more line per potential passport.
     The first step consists of collecting all data regarding one potential passport on a single line

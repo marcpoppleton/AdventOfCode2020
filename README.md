@@ -83,3 +83,19 @@ Then we collect the unique letters of the string and count them.
 
 This time we have to count number of items found in ALL lines of a group.
 To do so we get the unique positive responses for each person and, by intersecting the sets, form the response for a given group.
+
+
+## Day 7
+
+### Part 1
+
+We are given a set of hare brained rules regarding bags containing other bags, recursively.
+We have to parse the file to build a structure holding all the rules.
+We are going to store in a hashmap objects containing themselves a hashmap of their parents and siblings.
+In part 1 we are asked to count the number or root parent capable of containing our bag.
+To do so we use two sets, one of bags to visit, and one of visited bags. Everytime we take a bag we add it from the visited set we add its parents to the visiting set.
+We iterate on the visiting set until it's empty.    
+
+### Part 2
+
+Based on the same structure as part 1 we recursively count the siblings of each bag.

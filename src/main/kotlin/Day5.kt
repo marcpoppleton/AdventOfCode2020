@@ -1,15 +1,5 @@
 class Day5 : Day {
 
-    override fun main(args: Array<String>) {
-        if (args.size != 2) {
-            println("Usage is java -jar advent.jar 5 absolute_path_to_input_file")
-            println("For example:")
-            println("java -jar advent.jar 5 /tmp/day4.txt")
-            return
-        }
-        super.main(args)
-    }
-
     /**
      * We know that each boarding pass is a 10 char long encoding of the seat number
      * For part on we need to know what is the highest seat number scanned

@@ -1,15 +1,5 @@
 class Day6 : Day {
 
-    override fun main(args: Array<String>) {
-        if (args.size != 2) {
-            println("Usage is java -jar advent.jar 5 absolute_path_to_input_file")
-            println("For example:")
-            println("java -jar advent.jar 5 /tmp/day4.txt")
-            return
-        }
-        super.main(args)
-    }
-
     /*
     * The input contains groups of lines corresponding to the positives answers to a set of questions.
     * We have to return the number of questions having at least one positive answer for each group

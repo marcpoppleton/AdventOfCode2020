@@ -3,16 +3,6 @@ import kotlin.math.exp
 
 class Day1:Day {
 
-    override fun main(args: Array<String>) {
-        if (args.size != 2) {
-            println("Usage is java -jar advent.jar 1 absolute_path_to_input_file")
-            println("For example:")
-            println("java -jar advent.jar 1 /tmp/day1.txt")
-            return
-        }
-        super.main(args)
-    }
-
     /*
         We need to find in an array a pair of int whose sum equals a given value.
         The function starts by dropping all values above the target value and sorts them.

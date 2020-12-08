@@ -2,16 +2,6 @@ import java.io.File
 
 class Day2:Day {
 
-    override fun main(args: Array<String>) {
-        if (args.size != 2) {
-            println("Usage is java -jar advent.jar 2 absolute_path_to_input_file")
-            println("For example:")
-            println("java -jar advent.jar 2 /tmp/day2.txt")
-            return
-        }
-        super.main(args)
-    }
-
     /*
     We need to find the number of passwords containing a given number of occurrence of a char.
     Each line contains 2 decimal values, a character and a password.
