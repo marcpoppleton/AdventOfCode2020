@@ -10,6 +10,10 @@ class Day9 : Day {
         return findVulnerability(25,entries)
     }
 
+    /*
+    * In part 2, after having found the number not being the sum of exactly two numbers in the 25 preceding ones we have to find a set of
+    * consecutive numbers adding up to this number. Once the set found, we have to return the sum of the lowest and higest numbers of the set
+     */
     override fun part2(entries: List<String>): Long {
         val vul = findVulnerability(25,entries)
         return findSum(vul,entries)

@@ -9,10 +9,10 @@ interface Day {
             val start = System.currentTimeMillis()
             val part1 = part1(entries)
             val end = System.currentTimeMillis()
+            println("Magic part 1 is : $part1 in ${end - start} millis")
             val start2 = System.currentTimeMillis()
             val part2 = part2(entries)
             val end2 = System.currentTimeMillis()
-            println("Magic part 1 is : $part1 in ${end - start} millis")
             println("Magic part 2 is : $part2 in ${end2 - start2} millis")
         } catch (e: java.io.FileNotFoundException) {
             println("${args[1]} is not a valid file.")

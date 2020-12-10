@@ -116,3 +116,34 @@ To debug the program we have to change one, and only one, JMP to NOP or NOP to J
 To do, so we change one by one all the JMP instructions to NOP and run the code each time. If the program still fails to terminate properly
 we proceed to change one by one all the NOP to JMP and run the code each time.
 As soon as a change gets the program to terminate gracefully we return the value of the accumulator.
+
+
+## Day 9
+
+### Part 1
+
+We are given a set of number. We want to know how many numbers are at 1 degree of seperation and how many are at 3.
+We start by sorting the numbers then for each number we check if the previous one is 1 or 3 steps bellow.
+Once all numbers explored, we return the product of the two sums.
+
+### Part 2
+
+In part 2, after having found the number not being the sum of exactly two numbers in the 25 preceding ones we have to find a set of
+consecutive numbers adding up to this number. Once the set found, we have to return the sum of the lowest and higest numbers of the set
+
+
+## Day 10
+
+### Part 1
+
+We are given a set of number. We want to know how many numbers are at 1 degree of separation and how many are at 3.
+We start by sorting the numbers then for each number we check if the previous one is 1 or 3 steps bellow.
+Once all numbers explored, we return the product of the two sums.
+
+### Part 2
+
+We have to find the number of successful paths from 0 to max value of our list of inputs.
+We cannot compute all possibilities and check them one by one, but we can build a tree with the provided data.
+Walking down the tree we can check if some paths are successful or not.
+To avoid loosing time checking child nodes we store for each explored node the number of successful child node.
+Before exploring a child node we check if we already have a value for it or not. If we don't, we explore the child and store the value.
